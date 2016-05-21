@@ -24,23 +24,32 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Tracker Beta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNU-IV-zFg">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Meal Name :" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k7a-gx-0B1">
-                                        <rect key="frame" x="0.0" y="33" width="560" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="248" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gy3-59-WpF">
+                                        <rect key="frame" x="0.0" y="33" width="248" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHF-3c-r4R">
                                         <rect key="frame" x="0.0" y="75" width="65" height="30"/>
                                         <state key="normal" title="Add Meal"/>
+                                        <connections>
+                                            <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZDD-OD-Qiv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="k7a-gx-0B1" firstAttribute="leading" secondItem="zGV-TP-AkD" secondAttribute="leading" id="425-ch-4mF"/>
-                                    <constraint firstAttribute="trailing" secondItem="k7a-gx-0B1" secondAttribute="trailing" id="HjN-Id-7LM"/>
+                                    <constraint firstItem="Gy3-59-WpF" firstAttribute="leading" secondItem="zGV-TP-AkD" secondAttribute="leading" id="GnI-Dw-9Os"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gy3-59-WpF" secondAttribute="trailing" constant="398" id="dgT-Hf-2Wp"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="GnI-Dw-9Os"/>
+                                        <exclude reference="dgT-Hf-2Wp"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -50,6 +59,10 @@
                             <constraint firstItem="zGV-TP-AkD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="voJ-JC-Umv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mealNameLabel" destination="WNU-IV-zFg" id="IRQ-gX-Wi4"/>
+                        <outlet property="nameTextField" destination="Gy3-59-WpF" id="bQ0-aj-bQr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
