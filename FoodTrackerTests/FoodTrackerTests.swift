@@ -1,15 +1,14 @@
 //
-//  FoodTrackerBetaTests.swift
-//  FoodTrackerBetaTests
+//  FoodTrackerTests.swift
+//  FoodTrackerTests
 //
-//  Created by Ankit Yadav on 14/05/16.
-//  Copyright © 2016 Ankit Yadav. All rights reserved.
+//  Created by Jane Appleseed on 5/23/15.
+//  Copyright © 2015 Apple Inc. All rights reserved.
 //
 
 import XCTest
-@testable import FoodTrackerBeta
 
-class FoodTrackerBetaTests: XCTestCase {
+class FoodTrackerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -28,7 +27,7 @@ class FoodTrackerBetaTests: XCTestCase {
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measureBlock() {
             // Put the code you want to measure the time of here.
         }
     }
