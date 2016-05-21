@@ -28,6 +28,13 @@ class ViewController: UIViewController, UITextFieldDelegate
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: UITextFieldDelegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
+    }
 
     // MARK: Actions
     @IBAction func setDefaultLabelText(sender: AnyObject)
@@ -35,7 +42,5 @@ class ViewController: UIViewController, UITextFieldDelegate
         mealNameLabel.text = "Default Text"
         
     }
-    
-    
 }
 
