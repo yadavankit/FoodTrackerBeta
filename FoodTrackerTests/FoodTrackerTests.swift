@@ -6,30 +6,32 @@
 //  Copyright © 2015 Apple Inc. All rights reserved.
 //
 
+import UIKit
 import XCTest
 
-class FoodTrackerTests: XCTestCase {
+class FoodTrackerTests: XCTestCase
+{
+    //MARK: FoodTracker Tests
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    //Test to confirm that Meal Initializer returns when no name or negative rating provided
+    func testMealInitialization()
+    {
+        //Success Case
+        let potentialItem = Meal(name: "Beleryn Sandwich", photo: nil, rating: 5)
+        
+        //Tests that Meal object is not nil after initialization, successfully meal created
+        XCTAssertNotNil(potentialItem)
+        
+        //Failure Case
+        let noName = Meal(name: "", photo: nil, rating: 8)
+        
+        //Meal Not Created
+        XCTAssertNil(noName, "Empty Name is Invalid")
+        
+        //Yet Another Bad Case
+        let badRating = Meal(name: "Mc Egg", photo: nil, rating: -2)
+        
+        //Assert Not nil
+        XCTAssertNil(badRating)
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
