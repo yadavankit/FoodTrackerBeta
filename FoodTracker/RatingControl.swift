@@ -11,7 +11,15 @@ import UIKit
 class RatingControl: UIView {
     
     // MARK: Properties
+    
+    //Property Observer can be used to do tasks before or after a property changes
     var rating = 0
+    {
+        didSet
+        {
+            setNeedsLayout()
+        }
+    }
     var ratingButtons = [UIButton]()
     let spacing = 5
     let starCount = 5
@@ -84,12 +92,29 @@ class RatingControl: UIView {
             //Assign framesize to button that is enumerated
             button.frame = buttonFrame
         }
+        
+        //Call when View loads
+        updateButtonSelectionStates()
     }
     
     // MARK: Button Action
     func ratingButtonTapped(sender: UIButton)
     {
-        print("Button Pressed 👍")
+        rating = ratingButtons.indexOf(sender)! + 1
+        
+        //Call to updateButtonSelectionStates
+        updateButtonSelectionStates()
+        
+        print("Rating Button Number " + String(rating) + " Pressed 👍")
+    }
+    
+    func updateButtonSelectionStates()
+    {
+        for (index, button) in ratingButtons.enumerate()
+        {
+            //If index of button is less than Rating, it is selected
+            button.selected = index < rating
+        }
     }
 
 }
